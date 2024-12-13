@@ -1,0 +1,10 @@
+.counter-container{
+    background-color: rgb(20, 28, 118);
+    width: 500px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
