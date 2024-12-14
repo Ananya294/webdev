@@ -11,23 +11,41 @@ import Loginbtn from './components/Loginbtn'
 
 
 function App() {
-  const [isLoggedin, setLoggedIn] = useState(false);
 
-  if(!isLoggedin)
+  function handleClick()
   {
-    return (
-      <Loginbtn/>
-    )
+    alert("i am clicked");
+  }
+  
+  function handleMouseOver()
+  {
+    alert("mouser over")
   }
 
-  return (
+  function handleInputChange(e){
+    console.log("value till now: ", e.target.value);
+  }
+
+  return(
     <div>
-      <h1>welcome all</h1>
-      <div>
-        {isLoggedin && <Lougoutbtn/>}
-      </div>
-    </div>
+
+      <form>
+        <input type="text" onChange={handleInputChange}/>
+        {/* <button>submit</button> */}
+      </form>
+
+
+
+      {/* <p onMouseOver={handleMouseOver}>
+        i am a para
+      </p>
+    <button onClick={handleClick}>
+      click me
+    </button> */}
+  </div>
   )
+  
+  
 
   // if(isLoggedin)
   // {
