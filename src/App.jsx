@@ -6,20 +6,41 @@ import Counter from './components/Counter'
 import Card from './components/Card'
 import Button from './components/Button'
 import Card1 from './components/Card1'
+import Lougoutbtn from './components/Lougoutbtn'
+import Loginbtn from './components/Loginbtn'
 
 
 function App() {
-  const [name, setName] = useState('');
+  const [isLoggedin, setLoggedIn] = useState(false);
+
+  if(!isLoggedin)
+  {
+    return (
+      <Loginbtn/>
+    )
+  }
 
   return (
-    <>
+    <div>
+      <h1>welcome all</h1>
       <div>
-        <Card1 title = "card1" name={name} setName={setName}/>
-        <Card1 title = "card2" name={name} setName={setName}/>
-        {/* <p>inside parent component {name} </p> */}
+        {isLoggedin && <Lougoutbtn/>}
       </div>
-    </>
+    </div>
   )
+
+  // if(isLoggedin)
+  // {
+  //   return (
+  //     <Lougoutbtn/>
+  //   )
+  // }
+  // else{
+  //   return (
+  //     <Loginbtn/>
+  //   )
+  // }
+  
 }
 
 export default App
