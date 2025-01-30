@@ -50,28 +50,36 @@ export const Home = () => {
 
 
     return (
-        <div>
-            <div>
+        <div className="container mx-auto px-4 py-8 max-w-3xl">
+            <div className="flex gap-4 mb-4">
                 <input
                     type="text"
                     placeholder="enter title"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)} />
+                    onChange={(e) => setTitle(e.target.value)} 
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300"
+                    />
 
 
-                <button onClick={createPaste}>
+                <button onClick={createPaste}
+                className={`px-6 py-2 rounded-lg font-medium text-white transition-colors duration-300 ${
+                    pasteId 
+                    ? 'bg-green-600 hover:bg-green-700' 
+                    : 'bg-blue-600 hover:bg-blue-700'
+                }`}>
                     {
                         pasteId ? "Update paste" : "Create My Paste"
                     }
                 </button>
             </div>
 
-            <div>
+            <div className="mb-6">
                     <textarea 
                     value={value}
                     placeholder='enter content here'
                     onChange={(e) => setValue(e.target.value)}
-                    rows={20}/>
+                    rows={20}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300 placeholder-gray-400 font-mono"/>
             </div>
 
         </div>

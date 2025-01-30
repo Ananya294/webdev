@@ -19,43 +19,53 @@ export const Paste = () => {
     }
 
     return (
-        <div>
-            <input type="search"
-                placeholder='search here'
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)} />
-
-            <div>
+        <div className="container-inner py-8">
+            <div className="mb-8">
+                <input type="search"
+                    placeholder='search here'
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-slate-400" />
+            </div>
+            <div className="grid gap-4">
                 {
                     filteredData.length > 0 && filteredData.map((paste) => {
                         return (
-                            <div key={paste?._id}>
-                                <div>
-                                    {paste.title}
+                            <div key={paste?._id}
+                                className="rounded-lg shadow-sm p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                                <div className="flex justify-between items-start mb-4">
+                                    <h3 className="text-lg font-medium ">
+                                        {paste.title}
+                                    </h3>
+                                    <span className="text-sm text-slate-500 ml-4">
+                                        {new Date(paste.createdAt).toLocaleDateString()}
+                                    </span>
+
                                 </div>
-                                <div>
-                                    {paste.content}
+                                <div className="mb-4">
+                                    <p className="text-slate-600 line-clamp-3">
+                                        {paste.content}
+                                    </p>
                                 </div>
-                                <div>
-                                    
+                                <div className="flex flex-wrap gap-3">
+
                                     <button>
-                                    <a href={`/?pasteId=${paste?._id}`}>edit</a>                                        
-                                    </button>
-                                   
-                                    
-                                    <button>
-                                        <a href={`/pastes/${paste?._id}`}>view</a>
+                                        <a href={`/?pasteId=${paste?._id}`}>Edit</a>
                                     </button>
 
-                                    <button onClick={() => handleDelete(paste?._id)}>delete</button>
+
+                                    <button>
+                                        <a href={`/pastes/${paste?._id}`}>View</a>
+                                    </button>
+
+                                    <button onClick={() => handleDelete(paste?._id)}>Delete</button>
                                     <button onClick={() => {
                                         navigator.clipboard.writeText(paste?.content)
                                         toast.success("copied to clipboard")
-                                    }}>copy</button>
-                                    <button>share</button>
+                                    }}>Copy</button>
+                                    <button>Share</button>
 
                                 </div>
-                                <div>{paste.createdAt}</div>
                             </div>
 
                         )
@@ -65,5 +75,6 @@ export const Paste = () => {
 
 
         </div>
+
     )
 }
