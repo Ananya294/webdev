@@ -11,26 +11,29 @@ export const ViewPaste = () => {
     console.log("final paste",paste);
 
   return (
-    <div>
-         <div>
-            <div>
+    <div className="min-h-screen p-8 flex items-center justify-center">
+         <div className="w-full max-w-4xl outline outline-1 outline-gray-50 rounded-lg">
+            <div className="p-6 outline outline-1 outline-gray-50 rounded-t-lg">
                 <input
                     type="text"
                     placeholder="enter title"
                     value={paste.title}
                     disabled
-                    onChange={(e) => setTitle(e.target.value)} />
+                    onChange={(e) => setTitle(e.target.value)}
+                    className="w-full text-2xl font-bold bg-transparent outline-none placeholder-gray-50 text-gray-50"
+                />
 
-
+    
             </div>
 
-            <div>
+            <div className="p-6 outline outline-1 outline-gray-200 rounded-b-lg">
                     <textarea 
                     value={paste.content}
                     placeholder='enter content here'
                     disabled
                     onChange={(e) => setValue(e.target.value)}
-                    rows={20}/>
+                    rows={20}
+                    className="w-full bg-transparent outline-none placeholder-gray-50 text-gray-50 font-mono resize-none"/>
             </div>
 
         </div>

@@ -63,7 +63,11 @@ export const Paste = () => {
                                         navigator.clipboard.writeText(paste?.content)
                                         toast.success("copied to clipboard")
                                     }}>Copy</button>
-                                    <button>Share</button>
+                                    <button
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(`${window.location.origin}/pastes/${paste?._id}`)
+                                        toast.success("Paste link copied")
+                                      }}>Share</button>
 
                                 </div>
                             </div>

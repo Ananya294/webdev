@@ -1,0 +1,14 @@
+what i learnt (how why and what of each)
+useEffect hook
+custom hooks
+useId hook 
+state lifting
+diff between const and arrow func v/s function
+useState
+promise
+side effects
+fetch
+object.keys
+map trhough values
+index.js to export components all at once
+diff in pachange,json v/s package-lock.json
