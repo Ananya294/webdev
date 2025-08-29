@@ -1,0 +1,24 @@
+what i sreact router dom, v6 vs v7
+why we need link/ navlink
+why not a tag and why link - a tag re-renders the whole page so purpose of react is defeated
+navlink - to highlight the active page - can write own css
+link - no class as of such
+isActive, isPending, activeClassName
+useParams
+outlet
+loader
+useloaderData
+single page application
+multi page application
+there are may rendering methods - about 10(as in fireship video)
+frameworks depend on which rendering we want
+
+
+so,
+we craeted routes in main.jsx (no need of app.jsx)
+we craeted layout - layout.jsx - fixes header footer else all is dynamic - used outlet
+useParams - for user/:id type of routes
+how to use - loader - useloader data - optimal than doing fetching in component and changing state
+now how loader optimizes - so fetches data as we hover over github before clicking - so data is ready before so faster
+
+we laernt 2 types of how to write routes, nest routes
