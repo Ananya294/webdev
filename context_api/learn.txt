@@ -1,0 +1,23 @@
+how prop works
+prop drilling:
+{
+    Passing props is a great way to explicitly pipe data through your UI tree to the components that use it.
+    But passing props can become verbose and inconvenient when you need to pass some prop deeply through the 
+    tree, or if many components need the same prop. The nearest common ancestor could be far removed from the 
+    components that need data, and lifting state up that high can lead to a situation called “prop drilling”.
+}
+source - https://react.dev/learn/passing-data-deeply-with-context
+
+Context: an alternative to passing props 
+
+
+what was teh problem with passing prop component inside component
+state mgmt lib - redux(toolkit,react), zustand
+
+done through - useContext Hook, no external library needed
+
+why cant you just create global folder to get the values of props? it can be midifed at any instance by anyone - not good
+
+
+steps
+1. create context(.js file)
