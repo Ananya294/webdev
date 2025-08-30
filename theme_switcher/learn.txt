@@ -1,0 +1,8 @@
+learnt 
+- another way(basically syntax) of how to write the context whole setup things
+
+create context -> context provider -> consumer
+
+how to do light dark mode, the html query selector thing
+
+need to fix tailwind config in order to impement the change
